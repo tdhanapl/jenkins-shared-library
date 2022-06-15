@@ -19,7 +19,7 @@ def call(String repoUrl) {
                  // git url given has varible here and this git url given in jenkinsfile at the palce varibleof https://github.com/dhanapal703278/tomcat_maven_app.git
                  //@Library('first-shared-lib') _
                  //jenkinsforjava repoUrl(varible_name) 
-                 //jenkinsForJava 'https://github.com/dhanapal703278/tomcat_maven_app.git'
+                 //jenkinsforjava 'https://github.com/dhanapal703278/tomcat_maven_app.git'
                }
            }
            /*stage("Cleaning workspace") {
