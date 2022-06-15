@@ -18,11 +18,11 @@ def call(String repoUrl) {
                        url: "${repoUrl}"
                }
            }
-           stage("Cleaning workspace") {
+           /*stage("Cleaning workspace") {
                steps {
                    sh "mvn clean"
                }
-           }
+           }*/
            stage("Running Testcase") {
               steps {
                    sh "mvn test"
