@@ -10,7 +10,7 @@ def call(String repoUrl) {
             
         }
         options {
-        timestamps()()
+        timestamps()
         timeout(activity: true, time: 20)
             
         }
