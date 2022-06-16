@@ -31,20 +31,28 @@ def call(String repoUrl) {
                  //jenkinsForJava 'https://github.com/dhanapal703278/tomcat_maven_app.git'
                     sh "mvn clean package"
                 }
+                
             }
             /*stage('Create  a images'){
                 agent {
                     label 'docker-node'
-                    
                 }
                 steps {
-                    sh """
-                         docker build -t dhanapal406/tomcat_sai-$BUILD_NUMBER .
-                         docker login -u $DOCKER_LOGIN_USR -p $DOCKER_LOGIN_PSW
-                         docker push dhanapal406/tomcat_sai-$BUILD_NUMBER
-                         docker run -itd -p 8080:8080 dhanapal406/tomcat_sai-$BUILD_NUMBER
-                    """
-                }*/
+                sh """
+                     docker build -t dhanapal406/tomcat_sai-$BUILD_NUMBER .
+                     docker login -u $DOCKER_LOGIN_USR -p $DOCKER_LOGIN_PSW
+                     docker push dhanapal406/tomcat_sai-$BUILD_NUMBER
+                     docker run -itd -p 8080:8080 dhanapal406/tomcat_sai-$BUILD_NUMBER
+                """
+                }
+            }*/
+        }
+        post {
+            always {
+                //junit '**/target/surefire-reports*.xml'
+                junit '**/target/*.xml'
+            }
+            
         }
     }
 }
