@@ -49,9 +49,21 @@ def call(String repoUrl) {
         }
         post {
             always {
+                //deleteDir() /* clean up our workspace */
                 //junit '**/target/surefire-reports*.xml'
                 junit '**/target/*.xml'
             }
+            /*success {
+                slackSend channel: '#ops-room',
+                color: 'good',
+                message: "The pipeline ${currentBuild.fullDisplayName} completed successfully.
+                
+            }
+            failure {
+                mail to: 'team@example.com',
+                     subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+                     body: "Something is wrong with ${env.BUILD_URL}"
+            }*/
             
         }
     }
